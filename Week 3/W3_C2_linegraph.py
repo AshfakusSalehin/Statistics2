@@ -9,9 +9,6 @@ plt.plot(x,z,color='blue')
 plt.plot(y,z,color='red')
 plt.plot(x,y,color='green')
 
-plt.hist(x,y)
-
-#plt.imshow("clickme")
 
 plt.xlabel('x-values')
 plt.ylabel('y-values')
