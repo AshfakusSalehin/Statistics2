@@ -76,44 +76,6 @@ def adddata():
 	tree.bind('<<TreeviewSelect>>', item_selected)
 
 
-def mean(m):
-	n= len(m)
-	data.sort()
-	mean= (sum(data)/n)
-	#myText.set("Mean is: %f"%(mean))
-	return mean
-
-def median():
-	n= len(data)
-	data.sort()
-	if((n%2)==0):
-    		median =((data[int(n/2)]+data[int(n/2)+1])/2)
-	else:
-    		median = data[int(n/2)+1]
-	myText.set("Median is: %f"%(median))
-
-def mode():
-	n= len(data)
-	data.sort()
-	count = collections.Counter(data)
-	max_value = max(list(count.values()))
-	mode = [num for num, freq in count.items() if freq == max_value] 			
-	myText.set("Mode is: %s"%str(mode))
-
-def sd():
-	n= len(data)
-	data.sort()
-	diff=[]
-	diff_sq=[]
-	mean= (sum(data)/n)
-	for i in data:
-		diff.append(i-mean)
-	for j in diff:
-		diff_sq.append(j*j)
-	var = (sum(diff_sq)/n)
-	std = math.sqrt(var)
-	myText.set("Standard deviation is: %.5f"%(std))
-
 # This function computes correlation using Karl-Pearson Correlation coefficient method and then prints
 # the result in the result area. 
 def karl():
